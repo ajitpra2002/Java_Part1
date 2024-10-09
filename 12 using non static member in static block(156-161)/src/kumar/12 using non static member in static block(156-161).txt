@@ -1,0 +1,112 @@
+package kumar;
+
+public class A
+{
+	static int i;  //sgv
+	 // int i;//n s  //indstance veriable
+	public static void main(String[] args)
+	{
+	    
+		System.out.println(A.i);
+	}
+}
+/*if we write only int i; and compile then it gives the error message bz non
+static variable i can not be referenced from static context;
+//when we create class all static member loaded in the memory but non 
+static member loaded in the memory when we
+//create the object of that class.
+//static bloc executed only ones for each class load.
+//non static member is use only non static block without using object creation.
+*/
+package kumar;
+
+class B
+{
+	static void test()
+	 void test()
+	{
+		System.out.println("static");
+	}
+	public static void main(String[] args)
+	{
+		test();
+		System.out.println("hello world");
+	}
+}
+// if we write only void test() then compile will gives the error message
+// bcz we are calling non static method in the static main method.
+package kumar;
+
+ class C
+{
+	 //static int i ;
+	 int i;
+	static void test()
+	{
+		System.out.println(i);
+	}
+}
+// remove the static , then it gives the CTE 
+// BCZ non static variable  i can not be referenced from a
+//static context.
+package kumar;
+
+ class D
+{
+	 static void test1()
+	 //void test1()
+	{
+		System.out.println("FROM TEST1");
+	}
+	static void test2()
+	//void test2()
+	{
+		test1();
+		System.out.println("test test2");
+	}
+}
+
+// remove the static from the test1() method.then it give CTE..
+
+package kumar;
+
+class E
+{
+	 static int i;
+	 //int i;
+	static 
+	{
+		System.out.println(i);
+	}
+	
+}
+//remove the static from i. then it gives the CTE.
+package kumar;
+
+class F
+{
+	static void test1()//remove static
+	//void test();
+	{
+		
+	}
+	static 
+	{
+		test1();
+	}
+}
+// void test1() method should static.
+package kumar;
+
+class Pra
+{
+	static int i;
+	static void test()
+	{
+		System.out.println(i);
+	}
+	public static void main(String[] args)
+	{
+		test();
+	}
+}

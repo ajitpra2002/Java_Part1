@@ -1,0 +1,211 @@
+//180
+package amit.kumar;
+
+class A
+{
+	A()
+	{
+		System.out.println("A()");
+	}
+
+	public static void main(String[] args)
+	{
+		A a1 = new A();
+		System.out.println("done");
+	}
+}
+
+ /*
+ constructor is a special type of method. 
+ constructor should have the same name as class name
+ the main purpose of constructer is to initilaze the object or non static veriable or instance veriable.
+ every java class have its constructor its called default constructor.
+constructor should not have  any   return type.
+if you are not create constractor then compile will  automaticaly create own constructor.
+if you are create constructor then at the time of object creation it call automaticaly.
+constructor will be called automatically while the object
+is creating.
+ */
+package amit.kumar;
+
+public class mix {
+	int id;
+	String name;
+	mix()
+	{
+		id=0;
+		name=null;
+	
+	}
+
+	void display() {
+		System.out.println(id + " " + name);
+	}
+
+	public static void main(String args[]) {
+		mix s1 = new mix();
+		mix s2 = new mix();
+		s1.display();
+		s2.display();
+	}
+}
+
+package amit.kumar;
+//181
+ class B
+{
+
+	B()
+	{
+		System.out.println("B()");
+	}
+	public static void main(String[] args)
+	{
+		B b1 = new B();
+		System.out.println(".........");
+		B b2 = new B();
+		System.out.println("..........");
+	}
+//constructor will automatic call while object is creating.
+}
+
+package amit.kumar;
+
+public class Student {
+	int id;
+	String name;
+
+	Student(int i, String n) {
+		id = i;
+		name = n;
+	}
+
+	void display() {
+
+		System.out.println(id + " " + name);
+
+	}
+
+	public static void main(String args[]) {
+		Student s1 = new Student(111, "Karan");
+		Student s2 = new Student(222, "Aryan");
+		System.out.println(s1.id);
+		System.out.println(s1.name);
+		s1.display();
+		s2.display();
+	}
+}
+
+//182
+package amit.kumar;
+
+public class C
+{
+	int i;
+
+	public C()
+	{
+		System.out.println("c()");
+		i = 10;
+
+	}
+
+	public static void main(String[] args)
+	{
+		C c1 = new C();
+		System.out.println(".............");
+		System.out.println(c1.i);
+	}
+
+}
+//what is the access specifier of constructor?
+// access specifier of the constructor is the class access specifier
+//Through constructor we are initialing i value to 10.
+//all non static members are loading in the heap memory while object is crating 
+//constructor also execute at that time also
+//constructor is one of the initializer block all non static member will be initialize the
+//constructor bloc
+package amit.kumar;
+
+public class D
+{
+	int i;
+	int j = 20;
+	D()
+	{
+		System.out.println("D()");
+		i=10;
+		//initialize 1 value to 10
+	}
+	public static void main(String[] args)
+	{
+		D d1 = new D();
+		System.out.println("..........");
+		System.out.println(d1.i);
+		System.out.println(d1.j);
+	}
+
+}
+//through constructor we can initialize any of the non static member
+/**
+ * 
+ */
+package amit.kumar;
+
+class E {
+
+	int i;
+
+	E(int k) {
+		System.out.println("value of k is : " + k);
+		i = k;
+		System.out.println("k()");
+	}
+
+	public static void main(String[] args) {
+		E e1 = new E(9);
+		System.out.println(".................");
+		E e2 = new E(90);
+		System.out.println(".................");
+		E e3 = new E(910);
+		System.out.println(".................");
+		System.out.println(e1.i);
+		System.out.println(e2.i);
+		System.out.println(e3.i);
+	}
+}
+
+package amit.kumar;
+
+class F {
+	int i;
+
+	F(int k) {
+		i = 10;
+		System.out.println("f()");
+	}
+
+	public static void main(String[] args) {
+		F f1 = new F(1);
+		System.out.println(f1.i);
+	}
+}
+
+//186
+package amit.kumar;
+
+class G {
+	int i;
+
+	G(int j) {
+		this.i = j;
+	}
+
+	public static void main(String[] args) {
+		G g1 = new G(2);
+		System.out.println("done");
+		System.out.println(g1.i);
+	}
+
+}
+// Initialize the i value while object creation and same we are passing through parameter -2 .

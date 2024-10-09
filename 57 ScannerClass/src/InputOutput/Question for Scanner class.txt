@@ -1,0 +1,6 @@
+1.find the square of the number.
+2.find the volume of the cube.
+3.find the SI.
+4.find the alzebra of the number.
+5.find the circumference of the circle
+6.write a program of the .user gives a number to make a of that number table.

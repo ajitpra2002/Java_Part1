@@ -1,0 +1,590 @@
+package lara;
+
+public class A
+{
+	public static void main(String[] args)
+	{
+		System.out.println("Hello world");
+		System.out.println("Hello world");
+		System.out.println("Hello world");
+		System.out.println("Hello world");
+	}
+	public static void test()
+	{
+		System.out.println("from test");
+	}
+
+}
+
+package lara;
+
+public class B
+{
+	public static void test()
+	{
+		System.out.println("from test");
+	}
+	public static void main(String[] args)
+	{
+		System.out.println("Hello world");
+		System.out.println("Hello world");
+		System.out.println("Hello world");
+		System.out.println("Hello world");
+
+	}
+
+}
+
+package lara;
+//************************************calling of method***********************
+public class D
+{
+	static void test()
+	{
+		System.out.println("test");
+	}
+	public static void main(String[] args)
+	{
+		System.out.println("main begin");
+		test();
+		System.out.println("main end");
+	}
+
+}
+class Ajit
+{
+	static void test()
+	{
+		System.out.println(" Ajit test");
+	}
+	public static void main(String[] args)
+	{
+		System.out.println("Ajit main begin");
+		test();
+		System.out.println("Ajit main end");
+	}
+
+}
+
+
+package lara;
+
+public class C
+{
+	public static void test1()
+	{
+		System.out.println("from test");
+	}
+	public static void main(String[] args)
+	{
+		System.out.println("Hello world");
+		System.out.println("Hello world");
+		System.out.println("Hello world");
+		System.out.println("Hello world");
+
+	}
+	public static void test2()
+	{
+		System.out.println("from test");
+	}
+
+}
+
+package lara;
+
+public class E
+{
+	public static void test1()
+	{
+		System.out.println("from test1");
+	}
+	public static void main(String[] args)
+	{
+		System.out.println("main begin");
+		test1();
+		test2();
+		System.out.println("main end");
+	}
+	static void test2()
+	{
+		System.out.println("from test2");
+	}
+
+}
+
+package lara;
+
+public class K
+{
+	static void test()
+	{
+		System.out.println("from test");
+		System.out.println("from test");
+	}
+	public static void main(String[] args)
+	{
+		test();
+		System.out.println("........");
+		test();
+		test();
+	}
+}
+
+package lara;
+
+class L
+{
+	static void test()
+	{
+		System.out.println("from test begin");
+		System.out.println("from test end");
+		 
+	}
+	public static void main(String[] args)
+	{
+		test();
+		System.out.println(".........");
+		test();
+	}
+}
+
+package lara;
+
+public class F
+{
+	public static void test1()
+	{
+		System.out.println("from test1");
+	}
+	public static void main(String[] args)
+	{
+		System.out.println("main begin");
+		test1();
+		System.out.println("............");
+		test1();
+		System.out.println(".............");
+		System.out.println("main end");
+	}	
+}
+
+package lara;
+
+public class G
+{
+	static void test1()
+	{
+		System.out.println("from test1");
+	}
+	static void test2()
+	{
+		System.out.println("test2 begin");
+		test1();
+		System.out.println("test2 end");
+	}
+	public static void main(String[] args)
+	{
+		System.out.println("main begin");
+		test1();
+		test2();
+		System.out.println("main end");
+	}
+	
+}
+
+package lara;
+
+public class H
+{
+	public static void test()
+	{
+		System.out.println("from test1");
+	}
+	public static void main(String[] args)
+	{
+		System.out.println("from main");
+		test();
+	}
+	}
+
+package lara;
+
+public class M
+{
+	static void test()
+	{
+		System.out.println("test begin");
+		if(false)
+		{
+			System.out.println("from if");
+			return;
+		}
+		System.out.println("test end");
+	}
+	public static void main(String[] args)
+	{
+		System.out.println("main begin");
+		test();
+		System.out.println("main end");
+	}
+}
+
+package lara;
+
+class I
+{
+	public static void main(String[] args)
+	{
+		System.out.println("hello world");
+		//test();
+	}
+}
+
+package lara;
+
+public class N
+{
+ static void test()
+ {
+	 System.out.println("test begin");
+	 return;
+	 //System.out.println("test end");
+ }
+ public static void main(String[] args)
+{
+	test();
+	System.out.println("hello world");
+}
+}
+
+package lara;
+
+public class O
+{
+	public static void main(String[] args)
+	{
+		System.out.println("main begin");
+		System.out.println("main end");
+		return;//optional it does not return any value bcoz main is the void type..
+	}
+}
+
+package lara;
+
+public class P
+{
+	public static void main(String[] args)
+	{
+		System.out.println("main begin");
+		if(100==100)
+		{
+			System.out.println("from if");
+			return;
+		}
+			else
+			{
+		System.out.println("main end");//working as else stmt 
+		}
+	}
+}
+
+package lara;
+
+public class Q
+{
+	public static void main(String[] args)
+	{
+		
+		if(false)
+		{
+			return;
+			//System.out.println("hello world"); 
+			// unreachable statment.
+		}
+		System.out.println("from end");
+	}
+}
+
+package lara;
+
+public class R
+{
+	static int test()
+	{
+		System.out.println("from test");
+		return 1;// remove the return
+		// return value is required
+	}
+	public static void main(String[] args)
+	{
+		System.out.println("from main");
+		System.out.println(test());
+		test(); 
+	}
+}
+
+package lara;
+
+public class S
+{
+	static int test()
+	{
+		System.out.println("from test");
+		return 20;
+	}
+	public static void main(String[] args)
+	{
+		System.out.println("from main begin");
+		int i = test();
+		System.out.println(i);
+		System.out.println("from main end");
+	}
+}
+
+package lara;
+
+public class T
+{
+	static int test()
+	{
+		System.out.println("from test");
+		return 10;
+	}
+	public static void main(String[] args)
+	{
+		int i = test();
+		int j = 10+test();
+		System.out.println(test());
+		System.out.println(i);
+		System.out.println(j);
+		System.out.println(i+j+test());
+	}
+}
+
+package lara;
+
+public class U
+{
+	static int test()
+	{
+		System.out.println("from test");
+		return 20;
+	}
+	public static void main(String[] args)
+	{
+		System.out.println("main begin");
+		test();
+		System.out.println("main end");
+	}
+}
+
+package lara;
+
+public class V
+{
+	static void test()
+	{
+		System.out.println("from test");
+		
+	}
+	public static void main(String[] args)
+	{
+		System.out.println();
+		test()
+	}
+}
+
+package lara;
+
+public class W
+{
+	//static void test()
+	static int test()
+	{
+		System.out.println("from test");
+		return 0;//remove the return then check.
+	}
+	public static void main(String[] args)
+	{
+		int i = 10 + test();//test() return some value but test() is void type
+		System.out.println(i);
+	}
+}
+
+package lara;
+
+public class X
+{
+	static int test()
+	{
+		int i = 10;
+		return i;
+	}
+	public static void main(String[] args)
+	{
+		test();
+		System.out.println(test());
+		System.out.println(test() + test() );
+	}
+}
+
+package lara;
+
+public class Y
+{
+	static int test1()
+	{
+		System.out.println("from test1");
+		return 100;
+	}
+	static int test2()
+	{
+		System.out.println("from test2");
+		return test1();
+	}
+	public static void main(String[] args)
+	{
+		test1();
+		System.out.println(test2());
+		System.out.println(test2() + test1());
+		test2();
+	}
+}
+
+package lara;
+
+public class Z
+{
+	static int test1()
+	{
+		System.out.println("from test1");
+		return 10;
+	}
+	static int test2()
+	{
+		System.out.println("from test2");
+		return test1();
+	}
+	static int test3()
+	{
+		System.out.println("from test3");
+		return test1() + test2();
+	}
+	public static void main(String[] args)
+	{
+		System.out.println(test1());
+		System.out.println(test2());
+		System.out.println(test3());
+	}
+	
+}
+
+package lara;
+
+public class ZA
+{
+	static void test(int i)
+	{
+		System.out.println("from test");
+		System.out.println(i);
+	}
+	public static void main(String[] args)
+	{
+		System.out.println("form main begin");
+		//test();
+		test(2);
+		System.out.println("from main end");
+	}
+}
+
+package lara;
+
+public class ZB
+{
+	static void test(int i)
+	{
+		System.out.println("from test");
+		System.out.println(i);
+	}
+	public static void main(String[] args)
+	{
+		System.out.println("main begin");
+		test(10);
+		System.out.println("''''");
+		int k = 100;
+		test(k);
+		System.out.println("main end");
+		}
+}
+
+package lara;
+
+public class ZC
+{
+	static void test(int i)
+	{
+		System.out.println("from test:" + i);
+	}
+	public static void main(String[] args)
+	{
+		test(100);
+		int k = 200;
+		test(k);
+		test(k+300);
+		int m=1;//remove the value of m i.e is 1;
+		test(m);
+		System.out.println("done");
+	}
+}
+
+package lara;
+
+public class ZD
+{
+	static void test(int i)
+	{
+		System.out.println("from test:" + i);
+	}
+	public static void main(String[] args)
+	{
+		int m;
+		test(m=10);
+		System.out.println("done");
+		}
+}
+
+package lara;
+
+public class ZE
+{
+	static void test(int i , int j)
+	{
+		System.out.println("i =" + i + ",j=" + j );
+	}
+	public static void main(String[] args)
+	{
+		test(10,20);
+		int i = 200;
+		test(i , 500);
+		test(200, i );
+		test(i,i);
+		System.out.println("done");
+	}
+}
+
+package lara;
+
+public class ZF
+{
+	static void test(int i)
+	{
+		System.out.println("test:" + i);
+		i=10;
+	}
+	public static void main(String[] args)
+	{
+		int i = 20;
+		System.out.println("main begin:" + i);
+		test(i);
+		System.out.println("main end");
+	}
+}

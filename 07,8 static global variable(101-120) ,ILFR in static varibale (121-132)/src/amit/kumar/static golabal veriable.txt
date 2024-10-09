@@ -1,0 +1,596 @@
+//101
+package amit.kumar;
+
+public class A {
+	static int i;// default value is zero;
+
+	public static void main(String[] args) {
+	int i =10;
+		System.out.println(i);
+		i = 100;
+		System.out.println(i);
+		i = 200;
+		System.out.println(i);
+	}
+}
+
+/*
+static variable are the global variable it does not required to initialized 
+static variable having the default value according to their data type 
+g v can be reinitialized again and again
+
+g v can be used any of the method throughout the current class.
+local variable get more preference then g v 
+g v does not required  to initialize explicitly before usages
+g v can be modified anywhere within the current class
+
+*/
+//102
+package amit.kumar;
+
+public class B {
+	static int i;
+	static double j;
+	static boolean b;
+	static float f;
+
+	public static void main(String[] args) {
+		System.out.println(i);
+		System.out.println(j);
+		System.out.println(b);
+		System.out.println(f);
+	}
+
+}
+
+//103
+package amit.kumar;
+
+public class C {
+	static int i;// declaration
+	static int j = 10;// j is called initializer
+
+	public static void main(String[] args) {
+		System.out.println(i);
+		System.out.println(j);
+
+	}
+
+}
+
+
+/*
+initializer = if the g v getting  a value at the time of declaration 
+	then it is called initializer
+
+*/
+//104
+package amit.kumar;
+
+public class D
+{
+	static int i;
+	static int j;
+
+	public static void main(String[] args)
+	{
+		System.out.println(i);
+		System.out.println(j);
+		i = 10;
+		j = 20;
+		System.out.println(i);
+		System.out.println(j);
+
+	}
+
+}
+
+package amit.kumar;
+
+public class E
+{
+	static int i, j, k;
+
+	public static void main(String[] args)
+	{
+		System.out.println(i);
+		System.out.println(j);
+		System.out.println(k);
+
+	}
+
+}
+
+//106
+package amit.kumar;
+
+public class F
+{
+	static int i, j = 10, k, m = 20;
+
+	public static void main(String[] args)
+	{
+		System.out.println(i);
+		System.out.println(j);
+		System.out.println(k);
+		System.out.println(m);
+
+	}
+
+}
+
+package amit.kumar;
+
+public class G
+{
+	static int i;
+	static double j, m = 30.9, k;
+
+	public static void main(String[] args)
+	{
+		System.out.println(i);
+		System.out.println(j);
+		System.out.println(m);
+		System.out.println(k);
+
+	}
+
+}
+
+package amit.kumar;
+
+public class H
+{
+	static int i;
+
+	static void test()
+	{
+		System.out.println("FROM TEST :" + i);
+	}
+
+	public static void main(String[] args)
+	{
+
+		System.out.println("main:" + i);
+		i = 10;
+		test();
+		System.out.println("main:" + i);
+
+	}
+
+}
+
+package amit.kumar;
+
+public class I
+{
+	static int i;
+
+	static void test()
+	{
+		System.out.println("FROM TEST :" + i);
+		i = 10;
+	}
+
+	public static void main(String[] args)
+	{
+		System.out.println("main1:" + i);
+		i = 20;
+		test();
+		System.out.println("MAIN2:" + i);
+
+	}
+
+}
+
+package amit.kumar;
+
+public class J
+{
+	static int i = 0;
+
+	static void test1()
+	{
+		System.out.println("TEST1 :" + i);
+		i = 1;
+	}
+
+	static void test2()
+	{
+		System.out.println("test2:" + i);
+		i = 2;
+	}
+
+	public static void main(String[] args)
+	{
+		test1();
+		System.out.println("main1:" + i);
+		test2();
+		System.out.println("main2:" + i);
+
+	}
+
+}
+
+package amit.kumar;
+
+public class K
+{
+	static int i;
+
+	public static void main(String[] args)
+	{
+
+		System.out.println("main1:" + i);
+		i = 10;
+		System.out.println("main2:" + i);
+		i = 20;
+		System.out.println("main3:" + i);
+
+	}
+
+}
+
+package amit.kumar;
+
+public class L
+{
+
+	public static void main(String[] args)
+	{
+		int i = 0;
+		double j = 0.4;// i;
+		System.out.println("done");
+	}
+
+}
+
+package amit.kumar;
+
+public class M
+{
+
+	static int i;
+	static boolean j;// i
+
+	public static void main(String[] args)
+	{
+		System.out.println(j);
+		System.out.println("done");
+
+	}
+
+}
+
+package amit.kumar;
+
+class Mix
+{
+	static int i = 10;
+
+	public static void main(String[] args)
+	{
+
+		System.out.println(i);
+		System.out.println(Mix.i);
+	}
+}
+
+package amit.kumar;
+
+public class N
+{
+	static int i;
+
+	public static void main(String[] args)
+	{
+		System.out.println(i);// s g v
+		int i = 20;// l v to main
+		System.out.println("value of i is:" + i);
+		System.out.println(N.i);
+	}
+
+}
+
+package amit.kumar;
+
+public class O
+{
+	static int i;
+
+	public static void main(String[] args)
+	{
+		System.out.println(i);
+		System.out.println(O.i);// optional
+		O.i = 10;
+		System.out.println(O.i);
+	}
+
+}
+
+package amit.kumar;
+
+public class P
+{
+
+	static int i;
+
+	public static void main(String[] args)
+	{
+		System.out.println(i);
+		i = 10;
+		//O.i=10;
+		System.out.println(P.i);
+
+	}
+
+}
+
+package amit.kumar;
+
+public class Q
+{
+	static int i = 10;
+
+	public static void main(String[] args)
+	{
+		System.out.println(i);
+		double i = 2.9;
+		System.out.println(i);
+		System.out.println(Q.i);
+	}
+}
+
+package amit.kumar;
+
+public class R
+{
+	static int i = 10;
+	static int j = i;
+
+	public static void main(String[] args)
+	{
+		System.out.println(i);
+		System.out.println(j);
+	}
+}
+/*
+ * uses of i is proper with forward reference i.e we are initializing the i
+ * value to j
+ */
+package amit.kumar;
+
+public class S
+{
+	static int i = 5;
+	static int j = i;
+
+	public static void main(String[] args)
+	{
+		System.out.println(i);
+		System.out.println(j);
+	}
+}
+
+package amit.kumar;
+
+class T
+{
+	static int i = 10;
+	static int j = 20;
+	static int k = i + j;
+
+	public static void main(String[] args)
+	{
+		System.out.println(i);
+		System.out.println(j);
+		System.out.println(k);
+	}
+}
+
+package amit.kumar;
+
+public class U
+{
+	// static int i =j;//Cannot reference a field before it is defined
+	static int j = 10;
+
+	// java does not support the illegal forward reference
+	// static int j =10;
+	public static void main(String[] args)
+	{
+		// System.out.println(i);
+		System.out.println(j);
+	}
+}
+/*
+ * first of all we have to declare the s g v or we can initialize with some
+ * value then we initialize their reference to any another s g v , otherwise
+ * compiler will give the cte due to illegal forward reference i.e static int j
+ * =i; static int i = 10; we can not do like this because before declaration we
+ * can not initialize the value of i to j; it will give the compile time error
+ * 
+ */
+package amit.kumar;
+
+public class V
+{
+	static int i = 10;
+	static int j =i;
+	//static int m = n;
+	//illegal forward reference varibel
+	static int n = j;
+	public static void main(String[] args)
+	{
+		System.out.println(i);
+		System.out.println(j);
+		//System.out.println(m);
+		System.out.println(n);
+	}
+}
+
+package amit.kumar;
+
+public class W
+{
+	static int i = 10;
+	static int j = test();
+	static int test()
+	{
+	System.out.println("");
+		return 20;
+	}
+	public static void main(String[] args)
+	{
+		System.out.println(i);
+		System.out.println(j);
+	}
+}
+
+package amit.kumar;
+
+public class X
+{
+	static int test1()
+	{
+		return 1;
+	}
+
+	static int i = test1() + test2();
+
+	static int test2()
+	{
+		System.out.println("i->"+i);
+		return 2;
+	}
+
+	public static void main(String[] args)
+	{
+		System.out.println(i);
+	}
+}
+
+package amit.kumar;
+
+public class Y
+{
+	static int i = 100;
+	static int j = test();// 100
+
+	static int test()
+	{
+		return i;
+	}
+
+	public static void main(String[] args)
+	{
+		System.out.println(i);
+		System.out.println(j);
+	}
+}
+
+package amit.kumar;
+
+public class Z
+{
+	static int i = test();// 15
+	static int j = 15;
+
+	static int test()
+	{
+		System.out.println("From test ->i"+i);
+		System.out.println("From test ->j"+j);
+		return j;
+
+	}
+
+	public static void main(String[] args)
+	{
+		System.out.println(i);
+		System.out.println(j);
+	}
+}
+
+package amit.kumar;
+
+public class Z1
+{
+	static int i = test();
+
+	static int test()
+	{
+		System.out.println("from test");
+		return 10;
+	}
+
+	public static void main(String[] args)
+	{
+		System.out.println("main begin");
+		System.out.println(i);
+		System.out.println("main end");
+	}
+}
+
+package amit.kumar;
+
+class Z2
+{
+
+}
+// RTE main method not found in class Z2 please define the main method as
+// public static void main (String args[])
+package amit.kumar;
+
+public class Z3
+{
+	static int i = test();
+	static int test()
+	{
+		System.out.println("from test");
+		return 10;
+	}
+//	public static void main(String[] args)
+//	{
+//		
+//	}
+}
+//ctrl+m
+package amit.kumar;
+
+class Z4
+{
+	static int i = test1();
+
+	static int test1()
+	{
+		System.out.println("from test");
+		return 10;
+	}
+
+	public static void main(String[] args)
+	{
+		System.out.println(i);
+		System.out.println(test1());
+	}
+}
+
+package amit.kumar;
+
+public class Z5
+{
+	static int i = test();
+
+	static int test()
+	{
+		System.out.println("from test1");
+		main(null);
+		return 10;
+	}
+
+	public static void main(String[] args)
+	{
+		System.out.println("from main");
+		System.out.println(i);
+		test(); stack over flow exception
+	}
+}

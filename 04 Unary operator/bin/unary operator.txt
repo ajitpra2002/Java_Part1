@@ -1,0 +1,345 @@
+class F
+{
+	public static void main(String[] args) 
+	{
+		int i=0;
+		int j=i++ + i + i++ + i;
+		System.out.println(i);
+		System.out.println(j);
+	}
+}
+
+public class A1
+{
+	public static void main(String[] args) 
+	{
+		int i=0;
+		System.out.println(i++);
+		System.out.println(i);
+		
+	}
+}
+/*
+	i++ is the post increment first it uses the previous value then it 
+	increase the value then it uses itself
+	Printing the i values at line number 6 -  that is we are using the i value.
+	So first it will use the older value - it will print the older values
+	then it will increment the i values
+*/
+class B 
+{
+	public static void main(String[] args) 
+	{
+		int i=0;
+		System.out.println(i--);
+		System.out.println(i);
+		//i--;
+		//i=i-1;
+		//i=-1-1=-2 after calculating the value of in the rhs the value is assingh to i
+	}
+}
+/*
+
+	Printing the i values at line number 6 -  that is we are using the i value.
+	So first it will use the older value - it will print the older values
+	then it will decrement the i values
+
+*/
+
+class G
+{
+	public static void main(String[] args) 
+	{
+		int i=0;
+		int j=i++ + i++ + i++ +i;
+		System.out.println(i);
+		System.out.println(j);
+		
+	}
+}
+
+class B1
+{
+	public static void main(String[] args) 
+	{
+		int i=1;
+	 
+				System.out.println(i++);
+			//i++;
+			//i=i+1;
+			//i=1+1=2 after calculating the value of in the rhs the value is assigning to i			
+		System.out.println(i);
+		System.out.println(i++);
+		System.out.println(i);
+		
+	}
+}
+/*
+	At line number 6 -  we are not using it so it will increment/decrement the value by I and
+	it will use itself - at line number 6 i become 2
+*/
+
+class H
+{
+	public static void main(String[] args) 
+	{
+		int i=0;
+		int j=i-- + i + i-- +i;
+		System.out.println(i);
+		System.out.println(j);
+		
+	}
+}
+
+class C 
+{
+	public static void main(String[] args) 
+	{
+		int i=0;
+		//int j=i++;
+		int j=i++;
+		//first i assign the previous value (0) to the j then, i value is increased by 1 and
+		//using that value for printing purpose
+		System.out.println("i="+ i);
+		System.out.println("j="+j);
+		
+	}
+}
+
+class B2
+{
+	public static void main(String[] args) 
+	{
+		int i=1;
+		int j=i++;//first it assign the value of i into the j;
+			 i++;
+			 i=i+1;
+			 i=1+1=2 after calculating the value of in the rhs the value is assign to i			
+		System.out.println(i);
+		System.out.println(j);
+		System.out.println(i++);
+		System.out.println(i);
+		
+	}
+}
+
+/*
+	i value is assigning to J - that is we are using it
+	So first it will assign the older value of i to J then it will crease the value of i by 1;
+
+*/
+class D 
+{
+	public static void main(String[] args) 
+	{
+		int i=0;
+		int j=i--;
+		System.out.println(i);
+		System.out.println(j);
+	}
+}
+
+class I
+{
+	public static void main(String[] args) 
+	{
+		int x=0;
+		int y=x-- + x-- + x-- +x;
+		System.out.println(x);
+		System.out.println(y);
+		
+	}
+}
+
+class J
+{
+	public static void main(String[] args) 
+	{
+		int x=0;
+		int y=x++ + x + x-- +x;
+		System.out.println(x);
+		System.out.println(y);
+		
+	}
+}
+
+class E
+{
+	public static void main(String[] args) 
+	{
+		int i=0;
+		int j=i++ + i;
+		System.out.println(i);
+		System.out.println(j);
+	}
+}
+
+class K
+{
+	public static void main(String[] args) 
+	{
+		int i=0;
+		int j=i++ + i-- + i++ + i--;
+		System.out.println(i);
+		System.out.println(j);
+		
+	}
+}
+
+class L
+{
+	public static void main(String[] args) 
+	{
+		int i=0;
+		int j=i++ + i + i-- + i;
+		System.out.println(i);
+		System.out.println(j);
+		
+	}
+}
+
+class M
+{
+	public static void main(String[] args) 
+	{
+		int i=0;
+		System.out.println(++i);	
+	}
+}
+
+class N
+{
+	public static void main(String[] args) 
+	{
+		int i=0;
+		System.out.println(--i);	
+	}
+}
+
+class O
+{
+	public static void main(String[] args) 
+	{
+		int i=0;
+		int j=++i;
+		System.out.println(i);	
+		System.out.println(j);	
+	}
+}
+
+class P
+{
+	public static void main(String[] args) 
+	{
+		int i=0;
+		int j=--i;
+		System.out.println(i);	
+		System.out.println(j);	
+	}
+}
+
+class Q
+{
+	public static void main(String[] args) 
+	{
+		int i=0;
+		int j=++i + i;
+		System.out.println(i);	
+		System.out.println(j);	
+	}
+}
+
+class R
+{
+	public static void main(String[] args) 
+	{
+		int i=0;
+		int j=--i + i + --i + i;
+		System.out.println(i);	
+		System.out.println(j);	
+	}
+}
+
+class A 
+{
+	public static void main(String[] args) 
+	{
+		int i=0;
+		i++;
+		System.out.println(i++);
+		System.out.println(i);
+	}
+}
+
+class T
+{
+	public static void main(String[] args) 
+	{
+		int i=0;
+		int j=--i + --i + --i + i;
+		System.out.println(i);	
+		System.out.println(j);	
+	}
+}
+
+class U
+{
+	public static void main(String[] args) 
+	{
+		int i=0;
+		int j=i++ + i + i-- + i + ++i + i;
+		System.out.println(i);	
+		System.out.println(j);	
+	}
+}
+
+class V
+{
+	public static void main(String[] args) 
+	{
+		int i=0;
+		i++;
+		System.out.println(i);		
+	}
+}
+
+class W
+{
+	public static void main(String[] args) 
+	{
+		int i=0;
+		i--;
+		System.out.println(i);		
+	}
+}
+
+class X
+{
+	public static void main(String[] args) 
+	{
+		int i=0;
+		++i;
+		System.out.println(i);		
+	}
+}
+
+class Y
+{
+	public static void main(String[] args) 
+	{
+		int i=0;
+		--i;
+		System.out.println(i);		
+	}
+}
+
+class Z
+{
+	public static void main(String[] args) 
+	{
+		int i=0;
+		int j=--i +--i + --i +i;
+		System.out.println(i);		
+		System.out.println(j);		
+	}
+}

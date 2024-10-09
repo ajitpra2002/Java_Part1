@@ -1,0 +1,5 @@
+package lara;
+interface B
+{
+
+}

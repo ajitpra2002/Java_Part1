@@ -1,0 +1,214 @@
+
+class A
+{
+	static int i;
+}
+
+class B
+{
+	public static void main(String[] args)
+	{
+		System.out.println(A.i);
+		// System.out.println(i);
+	}
+}
+
+/*
+we can develop any number of class in the same java file.
+we can incorporate any no of  enum, class, interface, annotation.
+if all classes are non public then we can choose any of the class 
+or any name.
+if we choose any name of the java file while compiling we have to 
+take the main method class name .
+if  one of them is public are then it is mandatory to save that file with public class.
+if more then one class is public then compiler giver CTE.
+for every member of the .java file , compiler generate the dot class file
+
+we can call the static global variable of the one class  into another class we
+have to call the along with the class name followed by dot then variable name.
+
+
+*/
+enum B2
+{
+}
+
+class C
+{
+}
+
+interface D
+{
+}
+
+
+class H
+{
+	static
+	{
+		System.out.println("hi-sub");
+	}
+
+	public static void main(String[] args)
+	{
+		System.out.println("h-main");
+	}
+}
+
+class I
+{
+	static
+	{
+		System.out.println("i - sib");
+	}
+
+	public static void main(String[] args)
+	{
+		System.out.println("i-main");
+	}
+}
+
+
+public class F
+{
+	static int i = 12;
+
+	public static void main(String[] args)
+	{
+		System.out.println("from main:" + i);
+		System.out.println("from main:" + F.i);
+	}
+}
+
+class G
+{
+	public static void main(String[] args)
+	{
+		System.out.println("from main:" + F.i);
+	}
+}
+
+
+public class J
+{
+	static
+	{
+		System.out.println("J-sib1");
+	}
+
+	public static void main(String[] args)
+	{
+		System.out.println("j-main");
+	}
+
+	static
+	{
+		System.out.println("j-sib2");
+	}
+}
+
+class K
+{
+	static
+	{
+		System.out.println("k-sib1");
+	}
+
+	public static void main(String[] args)
+	{
+		System.out.println("k-main");
+	}
+
+	static
+	{
+		System.out.println("k-sib2");
+	}
+
+}
+
+
+public class N
+{
+	static int i = 10;
+	static
+	{
+		System.out.println("N-SIB");
+	}
+}
+
+class O
+{
+	static
+	{
+		System.out.println("O-SIB");
+	}
+
+	public static void main(String[] args)
+	{
+		System.out.println("o-main-B");
+		System.out.println(N.i);
+		System.out.println(N.i);
+		System.out.println(N.i);
+		System.out.println("o-main-e");
+	}
+}
+
+class L
+{
+	static
+	{
+		System.out.println("sib-L");
+
+	}
+
+	public static void main(String[] args)
+	{
+		System.out.println("L-main");
+	}
+}
+
+class M
+{
+	static
+	{
+		System.out.println("sib-m");
+	}
+
+	public static void main(String[] args)
+	{
+		System.out.println("M-main- BEGIN");
+		L.main(args);
+		System.out.println("M-MAIN-END");
+	}
+}
+
+
+public class P
+{
+	static
+	{
+		System.out.println("p-sib");
+	}
+
+	static void test1()
+	{
+		System.out.println("from test1");
+	}
+}
+
+class Q
+{
+	public static void main(String[] args)
+	{
+		System.out.println("...............");
+		P.test1();
+		P.test1();
+		P.test1();
+		System.out.println(".................");
+	}
+
+	static
+	{
+		System.out.println("q-sib");
+	}
+}

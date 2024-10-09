@@ -1,0 +1,343 @@
+package first.part;
+class A 
+{
+	public static void main(String[] args) 
+	{
+		final int i=10;
+		 int j=20;
+		System.out.println(i);
+		System.out.println(j);
+		//i=10;//we are trying to reinitialize the final variable i 
+		// compiler give the cte
+		j=1;
+		System.out.println(i);
+		System.out.println(j);
+	}
+}
+
+package first.part;
+class B 
+{
+	public static void main(String[] args) 
+	{
+		final int i;
+		i=10;
+		System.out.println(i);
+		//i=10;//try to re-initialization cte
+		System.out.println(i);
+	}
+}
+
+package first.part;
+public class  C 
+{
+	public static void main(String[] args) 
+	{
+		final int i = 10;
+		 int j = i;
+		System.out.println(i);
+		System.out.println(j);
+		j=(i+10);
+		System.out.println(i);
+		System.out.println(j);
+	}
+}
+
+package first.part;
+class D 
+{
+	public static void main(String[] args) 
+	{
+		final int i = 0;
+		//i++;//i=i+1;try to reinitialize the value of final variable
+		System.out.println(i);
+	}
+}
+
+package first.part;
+class  J
+{
+	public static void main(String[] args) 
+	{
+		
+		final int[]y= new int[3];
+		//y= new int[3];//can not modify
+		//modify with the same string array size
+		System.out.println("done");
+		
+	}
+}
+
+package first.part;
+class E 
+{
+	public static void main(String[] args) 
+	{
+		final E e1 = new E();
+		//e1=null;
+		System.out.println("done");
+		System.out.println(e1);
+		//re-initialization the value of e1 ;
+	}
+}
+
+package first.part;
+class L 
+{
+	public static void main(String[] ajit) 
+	{
+		int[]y;
+		y= new int[3];
+		ajit = new String[19];
+		ajit[0]="amit";
+		System.out.println("done ");
+	}
+}
+
+package first.part;
+class EE 
+{
+	public static void main(String[] args) 
+	{
+		final E e1 = new E();
+		System.out.println(e1);
+		//e1=null;//reinitialize the value of e1
+		//give the memory address of object E in 
+		//hexadecimal format along with the class
+			System.out.println(e1);
+			System.out.println("done");
+		
+	}
+}
+
+package first.part;
+public class F {
+	public static void main(String[] args) {
+		F f1 = new F();
+		System.out.println(f1);// print the memory location
+		final F f2 = new F();
+		System.out.println(f2);
+		// f2 = f1;
+		System.out.println("done");
+		// can not assign the memory address to the f2
+	}
+}
+
+package first.part;
+class  G
+{
+	public static void main(String[] args) 
+	{
+		final String s1="abc";
+		System.out.println(s1);
+		//s1="abc";
+		//reasign the same string to s1
+		System.out.println("done");
+	}
+}
+
+package first.part;
+class I
+{
+	public static void main(String[] args) 
+	{
+		
+		final int[]x= new int[3];
+		System.out.println(x);
+		//x=null;//can not reassign a value to final variable x;
+		System.out.println("done");
+		
+	}
+}
+
+package first.part;
+class H
+{
+	public static void main(String[] args) 
+	{
+		
+		final int[]x= new int[2];
+		x[0]=10;
+		x[1]=20;
+		System.out.println(x[0]);
+		System.out.println(x[1]);
+	}
+}
+
+package first.part;
+class M 
+{
+	public static void main(String[] args) 
+	{
+		args =null;
+		System.out.println("done");
+	}
+}
+
+package first.part;
+
+class O {
+	final int i = 10;
+
+	public static void main(String[] args) {
+		O o1 = new O();
+		// o1.i = 10;
+		System.out.println(o1.i);
+	}
+}
+
+package first.part;
+
+class P {
+	int i = 10;
+
+	public static void main(String[] args) {
+		final P p1 = new P();
+		p1.i = 10;// modifying i not P1
+
+		System.out.println("done");
+	}
+}
+
+package first.part;
+
+class N {
+	final int i = 10;
+	N n1 = new N();
+	
+	public static void main(String[] args) {
+		N n3 = new N();
+		System.out.println("done");
+	}
+	public N() {
+		System.out.println("Contructor -N()");
+	}
+}
+
+/*
+VVI
+When we program execution starts, control enters to the main method, and finds N n3 = new N(). 
+	It creates object of N and while creating object it has to instantiate all its instance variables 
+		which includes N n1 = new N(), so it again creates a new N object and loads all instance variables in 
+			that and there also it finds same N n1 = new N(), so it again creates the N object and 
+				this will continue until the stack is overflowed.
+
+This can be solved just by changing N n1 = new N(); to N n=null;
+
+*/
+package first.part;
+
+class Q {
+	final int i = 10;
+
+	void test() {
+		// i=10; // non static final variable trying to re-initialize in non
+		// -static test() method.
+	}
+}
+
+package first.part;
+class R
+{
+	final int i =10;
+	R()
+	{
+		//i=10;
+	}
+}
+
+package first.part;
+class S 
+{
+	final int x = 10;
+	{
+		//x=10;
+	}
+}
+
+package first.part;
+class T 
+{
+	//final int i; // i might have not initialized
+}
+
+package first.part;
+class U 
+{
+	final int x  = 0;
+}
+
+package first.part;
+
+class V {
+	final int i;
+
+	V() {
+		i = 0;
+	}
+	
+	public static void main(String[] args) {
+		V v1 = new V();
+		//v1.i=10;
+		 System.out.println(v1.i);
+		
+	}
+}
+
+package first.part;
+
+class W {
+	final int i = 0;
+
+	W() {
+		//i = 0;
+	}
+}
+
+package first.part;
+class X {
+	final int i;
+
+	X() {
+		i = 0;
+	}
+
+	/*X(int j)
+	{
+		final int i;
+		Y()
+		{
+			i=10;
+		}
+	}*/
+}
+package first.part;
+
+class Y {
+	final int i;
+
+	Y() {
+		i = 10;
+	}
+
+	 Y(int j){
+		 
+		i=j;
+	 }
+	
+}
+
+package first.part;
+class Z {
+	final int i;
+
+	Z() {
+		i = 10;
+	}
+
+	Z(int j) {
+		i = 10;
+	}
+}
+
+

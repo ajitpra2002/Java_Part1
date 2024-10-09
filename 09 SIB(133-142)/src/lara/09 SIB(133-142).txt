@@ -1,0 +1,293 @@
+package lara;
+
+public class A
+{
+	static 
+	{
+		System.out.println("SIB");
+	}
+	public static void main(String[] args)
+	{
+		System.out.println("main");
+	}
+	static
+	{
+	
+}
+}
+
+
+/*
+static initialization block 
+------------------------------
+it is comes under one of the initializer.
+every SIB  are executing before the main method
+first SIB will be executing then main() will be executed
+before main method SIB will be executing top to bottom
+no matter where SIB is there in the class, after SIB main()
+will be executing .
+before executing main() all SIB will be executing  top to bottom
+
+SIB is executing only once while class is loading
+*/
+package lara;
+
+public class B
+{
+	
+	public static void main(String[] args)
+	{
+		System.out.println("main");
+	}
+	static 
+	{
+		System.out.println("SIB");
+	}
+}
+
+package lara;
+
+public class C
+{
+	static 
+	{
+		System.out.println("SIB1");
+	}
+	public static void main(String[] args)
+	{
+		System.out.println("main");
+	}
+	static 
+	{
+		System.out.println("SIB2");
+	}
+}
+
+package lara;
+
+public class D
+{
+	static int i;
+	static
+	{
+		System.out.println("i->"+i);
+		i = 2;
+	}
+
+	public static void main(String[] args)
+	{
+		System.out.println(i);
+	}
+
+}
+/*
+first of all gsv i is initialized with default value zero
+then inside sib i value is getting modified with 2
+
+
+*/
+package lara;
+
+public class E
+{
+		
+		static int i = 1 ;
+		static
+		{
+			System.out.println("1-i>"+i);
+			i = 2;
+			System.out.println("2-i>"+i);
+			i=100;
+			System.out.println("3-i>"+i);
+		
+		}
+		
+		public static void main(String[] args)
+		{
+			System.out.println("4-i>"+i);
+			i=10;
+			System.out.println(E.i);
+		}
+}
+
+package lara;
+
+public class F
+{
+     
+	static int j;
+	static
+	{
+		static int i=50;
+		 
+		System.out.println("static:->"+i);
+		//j=i;
+		 
+	}
+	static int i;// = 5;
+	public static void main(String[] args)
+	{
+		System.out.println(i);
+	}
+
+}
+/*
+inside SIB we are not using the i value , it is not comes under perfect uses
+of i (uses= we are not printing the i value)
+that is why forward reference is legal inside the SIB
+SIB is executing only once while class is loading
+
+i=0,50,5
+
+
+
+*/
+package lara;
+
+public class G
+{
+	
+	static
+	{
+		
+		System.out.println(i); //illegal forward reference
+	}
+	static int i ; 
+	public static void main(String[] args)
+	{
+		System.out.println("done");
+	}
+
+}
+
+/*
+CTE because inside the SIB  we are using the i value for printing purpose that is
+uses of i is not proper, when the uses of any variable is proper, that variable should 
+be declaration before
+in this example
+first we are using i value for printing purpose.
+second declaration
+so compiler gives CTE
+
+*/
+package lara;
+
+public class H
+{
+	static int i ;
+	static int j = 100;
+	static
+	{
+		i=j;
+	}
+	//static int j = 100;// illegal forward reference;
+	public static void main(String[] args)
+	{
+		System.out.println("done");
+		System.out.println(i);
+		System.out.println(j);
+	}
+
+}
+
+/*
+I=0,100
+J=100
+
+*/
+package lara;
+
+public class I
+{
+	
+	static
+	{
+		System.out.println("sib1");
+	}
+	static int test()
+	{
+		System.out.println("Test()-i-->"+i);
+		System.out.println("TEST");
+		return 10;
+
+	}
+	public static void main(String[] args)
+	{
+		System.out.println("done");
+		System.out.println(i);
+	}
+	static int i = test();
+	static
+	{
+		System.out.println("sib2");
+	}
+}
+
+
+/*
+ALL STATIC INITIALIZER EXECUTION IS TOP TO BOTTOM BEFORE CLASS EXECUTION
+*/
+  package lara;
+
+public class J
+{
+	static int i = test() ;
+	
+	static
+	{
+		System.out.println("sib begin:");
+		main(null);
+		System.out.println("sib end:");
+	}
+	static int test()
+	{
+		System.out.println("test begin");
+		main(null);
+		System.out.println("test end");
+		return 20;
+	}
+	
+	public static void main(String[] args)
+	{
+		System.out.println("main " + i);
+	}
+
+}
+
+package lara;
+
+public class K {
+	public static void main(String[] args) {
+		Integer a1 = 127;
+		Integer a2 = 127;
+
+		int a3 = 128;
+		int a4 = 128;
+
+		Integer a5 = 12;
+		Integer a6 = 12;
+
+		System.out.println(a1 == a2);
+		System.out.println(a3 == a4);
+		System.out.println(a5 == a6);
+		System.out.println(128 == 128);
+
+	}
+}
+
+package lara;
+
+class Mix {
+	public static void main(String[] args) {
+		int i = 10;
+		System.out.println(i);
+		{
+			int y = 5;
+			System.out.println("y=" + y);
+			System.out.println("x=" + i);
+		}
+		System.out.println("outside block");
+		/// System.out.println(y);
+	}
+
+}

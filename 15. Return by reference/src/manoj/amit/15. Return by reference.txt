@@ -1,0 +1,82 @@
+
+package manoj.amit;
+ 
+package manoj.amit;
+
+public class U
+{
+	int i;
+
+	static U test()
+	{
+		U u1 = new U();
+		u1.i = 20;
+		return u1;
+	}
+
+	public static void main(String[] args)
+	{
+		U obj = test();
+		System.out.println(obj.i);
+	}
+}
+
+package manoj.amit;
+
+public class V
+{
+	int  i;
+	static V test()
+	{
+		return new V();
+		
+	}
+	public static void main(String[] args)
+	{
+		V v1 = test();
+		System.out.println(v1.i);
+	}
+}
+
+package manoj.amit;
+
+public class W
+{
+	int i;
+
+	static W test(W w1)
+	{
+		W w2 = new W();
+		w2.i = w1.i;
+		return w2;
+	}
+
+	public static void main(String[] args)
+	{
+		W obj = new W();
+		obj.i = 20;
+		W rv = test(obj);
+		System.out.println(rv.i);
+
+	}
+}
+
+package manoj.amit;
+
+public class T
+{
+	int i;
+
+	static T test()
+	{
+		T t1 = new T();
+		return t1;
+	}
+
+	public static void main(String[] args)
+	{
+		T obj = test();
+		System.out.println(obj.i);
+		System.out.println();
+	}
+}

@@ -1,0 +1,196 @@
+class G
+{
+	int i;
+
+	public static void main(String[] args)
+	{
+
+		G g1 = new G();
+		System.out.println(g1.i);
+
+	}
+}
+package kumar;
+
+
+public class O
+{
+	int i;
+	public static void main(String[] args)
+	{
+		O o1 = new O();// creating object
+		O o2 = o1;
+		//o1=null;
+		o1.i=10;
+		System.out.println(o2.i);
+		o2.i=20;
+		System.out.println(o2.i);
+	}
+}
+//here o1 is a object of O data type.
+// why we need to create object.
+// because to call all non static variable intside the static block.
+//non static variable or method only call inside the non static method .
+//here int i is non static variable and it call under the static veriable so it must be create object: 
+//syntax
+// <class name ye like a data type ><variabl name>=<new> <class name>();
+// here o1 is O data type
+
+
+package kumar;
+
+public class H
+{
+	void test()
+	{
+		System.out.println("test");
+	}
+	public static void main(String[] args)
+	{
+		H h1 =  new H();
+		h1.test();
+		System.out.println("hello world");
+	}
+}
+// call of non static method in static method.
+
+
+package kumar;
+
+class G
+{
+	int i;
+
+	public static void main(String[] args)
+	{
+
+		G g1 = new G();
+		System.out.println(g1.i);
+
+	}
+}
+/*
+ g1 is the derived data type g1 is called the referenced variable .
+ all referenced variable can refer  object.
+ whenever object is creating of any class on that point of time 
+ all the non static member is loading in the memory.
+ g1 data type is  G type
+ and G is the class type
+ 
+ 
+ we call the non static member through the reference variable.
+ 
+ */
+package kumar;
+
+public class I
+{
+	int x = 100;
+
+	static void test()
+	{
+		I rv = new I();
+		System.out.println(rv.x);
+	}
+
+	public static void main(String[] args)
+	{
+		test();
+		System.out.println("done");
+	}
+}
+
+package kumar;
+
+class J
+{		
+    
+	void test1()
+	{
+		System.out.println("from test1");
+	}
+
+	static void test2()
+	{
+		J obj = new J();
+		obj.test1();
+		System.out.println("from test2");
+	}
+
+	public static void main(String[] args)
+	{
+		test2();
+	}
+}
+
+package kumar;
+
+public class L
+{
+	void test1()
+	{
+		System.out.println("from test1");
+	}
+
+	static
+	{
+		L obj = new L();
+		obj.test1();
+	}
+
+	public static void main(String[] args)
+	{
+		System.out.println("From Main Method");
+	}
+}
+
+package kumar;
+
+class K
+{
+	int i;
+	static
+	{
+		K k1 = new K();
+		System.out.println("value of i is :" + k1.i);
+	}
+
+	public static void main(String[] args)
+	{
+		System.out.println("done");
+	}
+}
+
+package kumar;
+
+public class M
+{
+	int i;
+
+	public static void main(String[] args)
+	{
+		M m1 = new M();
+		System.out.println(m1.i);
+		m1.i = 10;
+		System.out.println(m1.i);
+	}
+}
+
+package kumar;
+
+public class N
+{
+	int i;
+
+	public static void main(String[] args)
+	{
+		N n1 = new N();
+		System.out.println(n1.i);
+		N n2 = new N();
+		System.out.println(n2.i);
+		n1.i = 10;
+		n2.i = 20;
+		System.out.println(n1.i);
+		System.out.println(n2.i);
+	}
+}

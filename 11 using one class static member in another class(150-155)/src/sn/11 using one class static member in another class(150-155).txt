@@ -1,0 +1,87 @@
+package sn;
+
+public class R
+{
+	static int i = 10;
+	
+	public static void main(String[] args)
+	{
+		
+	}
+}
+
+package sn;
+
+public class C
+{
+	static int i;
+	static void test()
+	{
+		System.out.println("from test:" + i);
+	}
+}
+class D
+{
+	public static void main(String[] args)
+	{
+		System.out.println("from main:" + C.i);
+		C.test();
+	}
+}
+package sn;
+
+public class S
+{
+	static void test()
+	{
+		System.out.println("from test s");
+	}
+//	public static void main(String[] args)
+//	{
+//		
+//	}
+}
+
+package sn;
+
+public class T
+{
+	public static void main(String[] args)
+	{
+		System.out.println(R.i);
+		S.test();
+	}
+}
+
+package sn;
+
+public class U
+{
+	static
+	{
+		System.out.println("u-sib");
+	}
+	public static void main(String[] args)
+	{
+		System.out.println("u-main");
+	}
+}
+
+package sn;
+
+public class V
+{
+	static
+	{
+		System.out.println("v-sib");
+	}
+	public static void main(String[] args)
+	{
+		System.out.println("v main begin");
+		U.main(args);
+		System.out.println("...........");
+		U.main(null);
+		System.out.println("v main end ");
+	}
+	
+}

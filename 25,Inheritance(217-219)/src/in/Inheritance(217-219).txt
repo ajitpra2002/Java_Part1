@@ -1,0 +1,557 @@
+//219
+package in;
+
+class E {
+	int i;
+	static int j;
+
+	void test1() {
+		System.out.println("from test1");
+	}
+
+	static void test2() {
+		System.out.println("from test2");
+	}
+}
+
+class F extends E {
+	int m;
+	static int n;
+
+	void test3() {
+		System.out.println("from test3");
+	}
+
+	static void test4() {
+		System.out.println("from test4");
+	}
+
+	public static void main(String[] args) {
+		E.test2();
+		F.test2();
+
+		E.j = 10;
+		F.n = 20;
+
+		E e1 = new E();
+		e1.i = 30;
+		e1.test1();
+
+		F f1 = new F();
+		f1.i = 40;
+		f1.m = 50;
+		f1.test1();
+		f1.test3();
+	 
+		System.out.println(".......");
+		System.out.println(E.j);
+		System.out.println(F.n);
+		System.out.println(e1.i);
+		System.out.println(f1.i + "," + f1.m);
+
+	}
+}
+
+//217
+package in;
+
+class A
+{
+	int i;
+}
+
+class B extends A
+{
+	int j;
+
+	public static void main(String[] args)
+	{
+		B b1 = new B();
+		System.out.println(b1.i);
+		System.out.println(b1.j);
+	}
+}
+
+
+/*
+--Inheritance is the way of deriving a child class from its parents class.
+-- and child class aquired all the property from its parent class.
+-- Parents class is know as super class.
+-- child class is know as Derived class.
+
+--class B extends A - child class B is devrived from class A and its aquiring all the property from it.
+
+
+/*
+package in;
+
+public class Address {
+	String city, state, country;
+
+	public Address(String city, String state, String country) {
+		this.city = city;
+		this.state = state;
+		this.country = country;
+	}
+}
+
+package in;
+// Aggregation.
+
+public class Emp {
+	int id;
+	String name;
+	Address address;
+
+	public Emp(int id, String name, Address address) {
+		this.id = id;
+		this.name = name;
+		this.address = address;
+	}
+
+	void display() {
+		System.out.println(id + " " + name);
+		System.out.println(
+				address.city + " " + address.state + " " + address.country);
+	}
+
+	public static void main(String[] args) {
+		Address address1 = new Address("Ranchi", "Jharkhand", "india");
+		Address address2 = new Address("Gaya", "Bihar", "india");
+
+		Emp e = new Emp(111, "Amit", address1);
+		Emp e2 = new Emp(112, "Rakesh", address2);
+		e.display();
+		e2.display();
+	}
+}
+/*
+	Employee has an object of Address; address object contains 
+	its own information such as city, state, country etc. In such case relationship is Employee HAS-A address.
+*/
+
+package in;
+
+public class Book {
+
+	public String title;
+	public String author;
+
+	Book(String title, String author) {
+
+		this.title = title;
+		this.author = author;
+	}
+}
+
+package in;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Aggregation {
+	public static void main(String[] args) {
+		
+		Student s1 = new Student("Mia", 1, "CSE");
+		Student s2 = new Student("Priya", 2, "CSE");
+		Student s3 = new Student("John", 1, "EE");
+		Student s4 = new Student("Rahul", 2, "EE");
+
+		// making a List of CSE Students.
+		List<Student> cse_students = new ArrayList<Student>();
+		cse_students.add(s1);
+		cse_students.add(s2);
+
+		// making a List of EE Students
+		List<Student> ee_students = new ArrayList<Student>();
+		ee_students.add(s3);
+		ee_students.add(s4);
+
+		Department CSE = new Department("CSE", cse_students);
+		Department EE = new Department("EE", ee_students);
+
+		List<Department> departments = new ArrayList<Department>();
+		departments.add(CSE);
+		departments.add(EE);
+
+		// creating an instance of Institute.
+		Institute institute = new Institute("BITS", departments);
+
+		System.out.print("Total students in institute: ");
+		System.out.print(institute.getTotalStudentsInInstitute());
+	}
+}
+
+//220
+package in;
+class I
+{
+	I()
+	{
+		System.out.println("I()");
+	}
+}
+class J extends I
+{
+		J()
+		{
+			//super();//by default compiler keep super keyword at the time of compiler.
+			//calling the default constructor of I class
+			System.out.println("J()");
+		}
+}
+class K
+{
+	public static void main(String[] args)
+	{
+		I obj1= new I();
+		System.out.println(".......");
+		J obj =new J();
+		System.out.println(".......");
+	}
+}
+//218
+package in;
+
+class C {
+	int i;
+
+	void test1() {
+		System.out.println("from test1");
+	}
+}
+
+class D extends C {
+	int j;
+
+	void test2() {
+		System.out.println("from test2");
+	}
+
+	public static void main(String[] args) {
+		D d1 = new D();
+		d1.test1();
+		d1.test2();
+		System.out.println("........");
+		d1.i = 10;
+		d1.j = 20;
+		System.out.println(d1.i + "," + d1.j);
+	}
+}
+
+package in;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Composition {
+	public static void main(String[] args) {
+
+		// Creating the Objects of Book class.
+		Book b1 = new Book("Java", "Jamesh Gosline");
+		Book b2 = new Book("Thinking in Java", "Bruce Eckel");
+		Book b3 = new Book("Java:The Complete Reference", "Herbert Schildt");
+
+		// Creating the list which contains the
+		// no. of books.
+		List<Book> books = new ArrayList<Book>();
+		books.add(b1);
+		books.add(b2);
+		books.add(b3);
+
+		Library library = new Library(books);
+
+		List<Book> bks = library.getTotalBooksInLibrary();
+		for (Book bk : bks) {
+
+			System.out.println(
+			"Title : " + bk.title + " and " + " Author : " + bk.author);
+		}
+	}
+}
+
+/*
+
+In above example a library can have no. of books on same or different subjects. 
+So, If Library gets destroyed then All books within that particular 
+	library will be destroyed. i.e. book can not exist without library. 
+
+That’s why it is composition.
+
+*/
+
+package in;
+/* Institute class contains list of Department 
+Objects. It is associated with Department 
+class through its Object(s).*/
+
+import java.util.List;
+
+class Institute {
+
+	String instituteName;
+	private List<Department> departments;
+
+	Institute(String instituteName, List<Department> departments) {
+		this.instituteName = instituteName;
+		this.departments = departments;
+	}
+
+	// count total students of all departments in a given institute
+	public int getTotalStudentsInInstitute() {
+		int noOfStudents = 0;
+		List<Student> students;
+		for (Department dept : departments) {
+			students = dept.getStudents();
+			for (Student s : students) {
+				noOfStudents++;
+			}
+		}
+		return noOfStudents;
+	}
+}
+package in;
+
+import java.util.List;
+
+/*
+ * Department class contains list of student Objects. It is associated with
+ * student class through its Object(s).
+ */
+class Department {
+
+	String dname;
+	private List<Student> students;
+
+	Department(String dname, List<Student> students) {
+
+		this.dname = dname;
+		this.students = students;
+
+	}
+
+	public List<Student> getStudents() {
+		return students;
+	}
+}
+//221
+package in;
+class L
+{
+	L()
+	{
+		System.out.println("L()");
+	}
+}
+class M extends L
+{
+	M()
+	{
+		//super();
+		//calling the default constructor of L class
+		System.out.println("M()");
+	}
+}
+class N extends M
+{
+	N()
+	{
+		//super();
+		//calling the default constructor of M class
+		System.out.println("N()");
+	}
+}
+class O
+{
+		public static void main(String[] args)
+		{
+			L obj1 = new L();
+			System.out.println("......");
+			M  obj2 = new M();
+			System.out.println(".......");
+			N obj3 = new N();
+			System.out.println(".......");
+		}
+}
+package in;
+
+import java.util.List;
+
+//Libary class contains list of books. 
+public class Library {
+	// reference to refer to list of books.
+	private final List<Book> books;
+
+	Library(List<Book> books) {
+		this.books = books;
+	}
+
+	public List<Book> getTotalBooksInLibrary() {
+
+		return books;
+	}
+}
+
+//222
+package in;
+class P
+{
+	P()
+	{
+		System.out.println("P()");
+	}
+}
+class Q extends P
+{
+	Q()
+	{
+		super();
+		System.out.println("Q()");
+	}
+}
+class R
+{
+	public static void main(String[] args)
+	{
+		Q q1 = new Q();
+		System.out.println("......");
+		P p1 = new P();
+		System.out.println(".......");
+		
+	}
+}
+
+//223
+package in;
+class S
+{
+	S()
+	{
+		System.out.println("S()");
+	}
+}
+class R1 extends S
+{
+	R1()
+	{
+		super();
+		System.out.println("R()");
+	}
+}
+class T extends R1
+{
+	T()
+	{
+		System.out.println("T()");
+	}
+}
+class U
+{
+	public static void main(String[] args)
+	{
+		T t1 = new T();
+		System.out.println("......");
+		R1 r1 = new R1();
+		System.out.println("......");
+		S s1 = new S();
+		System.out.println("......");
+	}
+}
+
+package in;
+
+//Java program to illustrate the concept of Aggregation. 
+//student class 
+class Student {
+	String name;
+	int id;
+	String dept;
+
+	Student(String name, int id, String dept) {
+
+		this.name = name;
+		this.id = id;
+		this.dept = dept;
+
+	}
+}
+
+
+//224
+package in;
+class V
+{
+	V(int i)
+	{
+		System.out.println("v(int)");
+	}
+}
+class W extends V
+{
+	W(int i)
+	{
+		super(2);
+		System.out.println("W(int)");
+	}
+	public static void main(String[] args)
+	{
+		V v1 = new V(90);
+		System.out.println(".....");
+		W w1 = new W(90);
+		System.out.println("......");
+	}
+}
+
+//225
+package in;
+class X
+{
+	X() {
+		System.out.println("X()");
+	}
+}
+class Y extends X
+{
+	Y(int i)
+	{
+		System.out.println("Y(int)");
+	}
+	public static void main(String[] args)
+	{
+		Y y1 = new Y(10);
+		System.out.println("......");
+	}
+}
+
+package in;
+
+class Animals {
+
+}
+
+class Dog extends Animals {
+
+}
+
+public class ZA {
+	public static void main(String[] args) {
+		ZA za = new ZA();
+		Animals animals = new Animals();
+		Dog dog = new Dog();
+		Object object =  new Object();
+		
+		System.out.println(dog instanceof Animals);
+		System.out.println(animals instanceof Object);
+		System.out.println(animals instanceof Dog);
+		System.out.println("-----------------");
+		System.out.println(za instanceof Object);
+		System.out.println(object instanceof Animals);
+		//System.out.println(za instanceof Animals);
+		// CTE : inconvertible types;
+		
+	}
+}
+
+
+
+

@@ -1,0 +1,157 @@
+/*
+ if a class contain multiple constractor where each type of constractor have different parameters list.
+
+*/
+package com.overloading;
+
+//Constructors overloading - Multiple constructors in a class
+public class A{
+	//class name and constructors name are same
+
+	//empty constructor
+	A(){}
+	
+	/*constructors with different data types with same number of argument*/
+	A(int a){}
+	A(double b){}
+	
+	/*constructors with with different number of arguments*/
+	A(int a, int b){}
+	A(int a ,int b, double c){}
+	
+}
+
+/*
+
+Java allows method overloading. In the same manner, the programmer can do constructor overloading in java. 
+	A constructor can also be overloaded as a method. 
+		We can overload the constructor with different parameter lists. 
+			We can arrange the constructors in a way that each constructor performs a different task. 
+				The compiler is differentiated by the number of parameters in the list and their types.
+
+*/
+
+package com.overloading;
+
+public class Employee {
+	int id;
+	String name;
+	int Empid;
+
+	// Empty constructor
+	public Employee() {
+		this.id = 0;
+		this.name = "Not Available";
+	}
+
+	// Overloaded constructor with int parameter
+	public Employee(int id) {
+		this.id = id;
+		this.name = "Not Available";
+
+	}
+
+	// Overloaded constructor with a int parameter and a string
+	public Employee(int id, String name) {
+		this.id = id;
+		this.name = name;
+	}
+
+	public void display() {
+		System.out.println("Employee Info: ");
+
+		System.out.println("ID: " + this.id);
+		System.out.println("Name: " + this.name);
+		System.out.println("**************************");
+	}
+	
+	public static void main(String[] args) {
+		// Call empty constructor
+		Employee e1 = new Employee();
+		e1.display();
+
+		// Call one parameter constructor
+		Employee e2 = new Employee(123);
+		e2.display();
+
+		// Call two parameter constructor
+		Employee e3 = new Employee(123, "John");
+		e3.display();
+
+	}
+
+}
+
+package com.overloading;
+
+public class Person {
+	Person(String name) {
+		System.out.println("Name of person = " + name);
+	}
+
+	Person(String name, String voterId) {
+		System.out.println("Name of person = " + name);
+		System.out.println("Voter ID of " + name + " = " + voterId);
+	}
+
+	public static void main(String[] args) {
+		// If user has not voter ID then just print name.
+		Person person1 = new Person("Ravi");
+		// If user has voter ID then print name and voter Id
+		Person person2 = new Person("Ram", "12345678");
+	}
+}
+/*
+How many ways to overload Constructors?
+
+There are three ways to overload the constructor and let’s see the constructor overloading program in java.
+1. You can overload by changing the number of arguments/parameters.
+2. You can overload by changing the data type of arguments.
+3. The order of the parameters of methods.
+
+
+
+
+ By changing the number of arguments : above programs belongs to this.
+ https://javagoal.com/constructor-overloading-program-in-java/
+*/
+
+package com.overloading;
+
+public class Student {
+	String name;
+	int rollNo;
+	String className;
+	boolean isFromCity;
+
+	Student(String name, int rollNo) {
+		this.name = name;
+		this.rollNo = rollNo;
+	}
+
+	Student(String name, int rollNo, String className, boolean isFromCity) {
+		this.name = name;
+		this.rollNo = rollNo;
+		this.className = className;
+		this.isFromCity = isFromCity;
+	}
+
+	public void studentData() {
+		System.out.println("Name of Student = " + name);
+		System.out.println("Roll no = " + rollNo);
+		System.out.println("Class Name = " + className);
+		System.out.println("Is student belongs to city = " + isFromCity);
+		System.out.println("**********************");
+	}
+
+	public static void main(String arg[]) {
+		// Creating object and providing some values by using parameterized constructor
+
+		Student student1 = new Student("Ravi", 1);
+		student1.studentData();
+
+		Student student2 = new Student("Ram", 2, "MCA", true);
+		student2.studentData();
+
+	}
+}
